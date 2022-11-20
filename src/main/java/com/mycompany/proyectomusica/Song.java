@@ -9,5 +9,10 @@ package com.mycompany.proyectomusica;
  * @author Mikey
  */
 public class Song {
+    private String name;
+    private String time;
+    private String album;
+    
+    
     
 }
