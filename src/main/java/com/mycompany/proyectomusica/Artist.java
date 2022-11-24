@@ -20,28 +20,38 @@ public class Artist {
     private String nacionalidad;
     LinkedList<Song> songs;
     
-    public static void leerArchivo(String name) throws FileNotFoundException, IOException{
-        File archivo = null;
-        FileReader fr = null;
+    public static void leerArchivo(String name){
+        File archivo = null;//apunta a un archivo físico del dd
+        FileReader fr = null;//para leer el archivo
         BufferedReader bufer = null;
         
         try{
-            archivo = new File("D:\\proyectoMusica" + name + ".txt");
+            //creamos un apuntador a un archivo en físico
+            archivo = new File("E:\\" + name + ".txt" );
+            //abremos el archivo para lectura
             fr = new FileReader(archivo);
+            //configurar bufer para hacer la lectura
             bufer = new BufferedReader(fr);
+            
+            //Lectura del contenido del archivo 
             String linea;
-            while((linea = bufer.readLine())!=null)
+             //mientras haya información en el archivo 
+            while((linea = bufer.readLine()) != null)
                 System.out.println("Linea del archivo: " + linea);
+            
         }catch(Exception e){
-            System.out.println("Error: el archivo no se encuentra...");
+            System.out.println("Error: No se encuentra el archivo");
             e.printStackTrace();
         }finally{
+            //Esta cláusula se ejecuta siempre
+            //Se cierra el archivo
             try{
                 if(null != fr){
+                    //Si se logró abrir el archivo, debemos cerrarlo.
                     fr.close();
                 }
             }catch(Exception e2){
-                System.out.println("Error al cerrar el archivo...");
+                System.out.println("Error al cerrar el archivo");
                 e2.printStackTrace();
             }
         }
