@@ -46,16 +46,17 @@ public class proyectoMusica {
             System.out.println("4.-Eliminar un albúm");
             System.out.println("5.-Agregar una nueva canción");
             System.out.println("6.-Eliminar una canción");
-            System.out.println("7.-Ver la lista de artistas");
+            System.out.println("7.-Ver tu lista de artistas");
             System.out.println("8.- Ver la lista de albúmes por artista");
             System.out.println("9.-Ver la lista de canciones por albúmes");
             System.out.println("10.-Ver todos los artistas existentes");
+            System.out.println("11.-Cerrar programa");
             entrada = bufer.readLine();
             opcion = Integer.parseInt(entrada);
 
             switch (opcion) {
                 case 1: //Agregar un artista
-                    System.out.println("Escribe el artista: ");
+                    System.out.println("Escribe el Nombre artista: ");
                     entrada = bufer.readLine();
                     nombre = entrada;
                     Artist newArtista = new Artist(nombre);
@@ -66,8 +67,8 @@ public class proyectoMusica {
                 case 2: //Eliminar un artista
                     System.out.println("Tus artistas:");
                     //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -79,9 +80,8 @@ public class proyectoMusica {
                     break;
                 case 3://Agregar un album
                     System.out.println("Tus artistas:");
-                    //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -100,8 +100,8 @@ public class proyectoMusica {
                 case 4://Eliminar un album
                     System.out.println("Tus artistas:");
                     //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -109,8 +109,8 @@ public class proyectoMusica {
                     Artist av = lista.get(pv); //Recupere el artista
                     //Imprime los albunes de ese artista
                     System.out.println("Sus albúmes:");
-                    for (int i = 0; i < av.albunes.size(); i++) {
-                        System.out.println("" + av.albunes.get(i).getNombre().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -120,8 +120,8 @@ public class proyectoMusica {
                 case 5://Agregar una cancion
                     System.out.println("Tus artistas:");
                     //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -129,8 +129,8 @@ public class proyectoMusica {
                     Artist a = lista.get(p); //Recupere el artista
                     //Imprime los albunes de ese artista
                     System.out.println("Sus albúmes:");
-                    for (int i = 0; i < a.albunes.size(); i++) {
-                        System.out.println("" + a.albunes.get(i).getNombre().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -148,8 +148,8 @@ public class proyectoMusica {
                 case 6://Eliminar cancion
                     System.out.println("Tus artistas:");
                     //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -157,16 +157,16 @@ public class proyectoMusica {
                     Artist aq = lista.get(pq); //Recupere el artista
                     //Imprime los albunes de ese artista
                     System.out.println("Sus albúmes:");
-                    for (int i = 0; i < aq.albunes.size(); i++) {
-                        System.out.println("" + aq.albunes.get(i).getNombre().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
                     pq = Integer.parseInt(entrada);
                     Album c = aq.getAlbuM(pq);//Recupero un album especifico de un artista
                     System.out.println("Sus canciones:");
-                    for (int i = 0; i < c.songs.size(); i++) {
-                        System.out.println("" + c.songs.get(i).getTitulo().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -175,16 +175,14 @@ public class proyectoMusica {
                     break;
                 case 7:
                     System.out.println("Tus artistas:");
-                    //debo hacer un for para imprimir todos los artistas en lista
                     for (Artist listita : lista) {
                         System.out.println("El nombre del artista es: " + listita);
                     }
                     break;
                 case 8:
                     System.out.println("Tus artistas:");
-                    //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -198,9 +196,8 @@ public class proyectoMusica {
                     break;
                 case 9:
                     System.out.println("Tus artistas:");
-                    //debo hacer un for para imprimir todos los artistas en lista
-                    for (int i = 0; i < lista.size(); i++) {
-                        System.out.println("" + lista.get(i).getName().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
@@ -208,20 +205,24 @@ public class proyectoMusica {
                     Artist ax = lista.get(pl); //Recupere el artista
                     //Imprime los albunes de ese artista
                     System.out.println("Sus albúmes:");
-                    for (int i = 0; i < ax.albunes.size(); i++) {
-                        System.out.println("" + ax.albunes.get(i).getNombre().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     System.out.println("Escribe la posición ");
                     entrada = bufer.readLine();
                     pq = Integer.parseInt(entrada);
                     Album d = ax.getAlbuM(pl);//Recupero un album especifico de un artista
                     System.out.println("Sus canciones:");
-                    for (int i = 0; i < d.songs.size(); i++) {
-                        System.out.println("" + d.songs.get(i).getTitulo().toString());
+                    for (Artist listita : lista) {
+                        System.out.println("El nombre del artista es: " + listita);
                     }
                     break;
                 case 10:
                     acciones.leerArchivos("artistas");
+                    break;
+                
+                case 11:
+                    System.out.println("Programa finalizado");
                     break;
             }
             
