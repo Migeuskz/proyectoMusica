@@ -9,9 +9,20 @@ package com.mycompany.proyectomusica;
  * @author Mikey
  */
 public class Song {
-    private String name;
-    private String time;
-    private String album;
+    private String titulo;
+    
+    public Song(String titulo){
+        this.titulo = titulo;
+    } 
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    
     
     
     

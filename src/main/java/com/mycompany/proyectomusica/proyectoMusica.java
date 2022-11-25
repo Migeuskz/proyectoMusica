@@ -4,7 +4,7 @@
  */
 package com.mycompany.proyectomusica;
 
-import static com.mycompany.proyectomusica.Artist.leerArchivo;
+//import static com.mycompany.proyectomusica.Artist.leerArchivo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -59,40 +59,7 @@ public class proyectoMusica {
         }
     }
     
-    public static void escribirArchivo(String name){
-        FileWriter archivo = null; 
-        PrintWriter pw = null;
-        BufferedReader bufer2 = new BufferedReader(new InputStreamReader(System.in));
-        String entrada;
-        char respuesta;
-        try{
-            archivo = new FileWriter("E:\\" + name + ".txt");
-            pw = new PrintWriter(archivo);
-            do{
-                System.out.println("Escribe la información a guardar en el archivo: ");
-                entrada = bufer2.readLine();
-                //Agrega lo leído en teclado al archivo en disco
-                pw.println(entrada);
-                System.out.println("Escribe s para continuar, n para parar: ");
-                entrada = bufer2.readLine();
-                respuesta = entrada.charAt(0);
-            }while(respuesta != 'n');
-            
-        }catch(Exception e){
-            System.out.println("Error al escribir el archivo: " + name);
-            e.printStackTrace();
-        }finally{
-            try{
-                //Cerrar el archivo si es que se pudo abrir para escritura
-                if(null != archivo){
-                    archivo.close();
-                }
-            }catch(Exception e2){
-                System.out.println("Error al cerrar el archivo " + name);
-                e2.printStackTrace();
-            }
-        }
-    }
+    
     
     /**
      * @param args the command line arguments
@@ -104,10 +71,10 @@ public class proyectoMusica {
         String fileName;
         int option;
         
-        System.out.println("Programa que manipula archivos de texto:");
+        System.out.println("Programa que crea tu playlist fav 🎧:");
         System.out.println("=========================================");
         System.out.println("1 - Leer un archivo de texto existente");
-        System.out.println("2 - Crear un archivo de texto");
+        System.out.println("2 - Agregar un artista nuevo");
         System.out.println("¿Qué quieres hacer?");
         entrada = buferTeclado.readLine();
         option = Integer.parseInt(entrada);
@@ -124,8 +91,8 @@ public class proyectoMusica {
             }
             break;
             case 2:{
-                System.out.println("Creación de un archivo de texto");
-                escribirArchivo(fileName);
+                System.out.println("Tus artistas favoritos son: ");
+               // escribirArchivo(fileName
             }
             break;
             default:System.out.println("La opción no existe");
